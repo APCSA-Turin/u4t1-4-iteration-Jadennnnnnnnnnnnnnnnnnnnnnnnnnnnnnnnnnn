@@ -1,15 +1,22 @@
 public class Main {
-    public static void main(String[] args) {
-        StringLoops loops = new StringLoops();
-        System.out.println("--- testing countCharacters ---");
-        System.out.println(loops.countCharacters("a", "Apple and banana"));
-        System.out.println(loops.countCharacters("A", "Apple and banana"));
-        System.out.println(loops.countCharacters("!", "Hello! Nice day!"));
-        System.out.println(loops.countCharacters("g", "Hello! Nice day!"));
-        System.out.println("\n--- testing reverseString ---");
-        System.out.println(loops.reverseString("hello!"));
-        System.out.println(loops.reverseString("Apples and bananas"));
-        System.out.println(loops.reverseString("C"));
+    public static void main(String[] args)
+    {
+        String str = "Hoopla";
+            int max = 0;
+            int count;
+            for (int i = 0; i < str.length() - 1; i++) {
+              count = 1;
+              int j = i;
+              while (j != str.length() - 1 && str.substring(j, j + 1).equals(str.substring(j + 1, j + 2))) {
+                j++; 
+                count++;
+              }
+              if (count > max) {
+                max = count;
+              }
+            }
+        System.out.println(max);
     }
-}
+ }
+ 
     
