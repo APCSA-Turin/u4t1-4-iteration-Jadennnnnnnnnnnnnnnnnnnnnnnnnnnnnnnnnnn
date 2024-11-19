@@ -1,21 +1,30 @@
 public class Main {
     public static void main(String[] args)
     {
-        String str = "Hoopla";
-            int max = 0;
-            int count;
-            for (int i = 0; i < str.length() - 1; i++) {
-              count = 1;
-              int j = i;
-              while (j != str.length() - 1 && str.substring(j, j + 1).equals(str.substring(j + 1, j + 2))) {
-                j++; 
-                count++;
-              }
-              if (count > max) {
-                max = count;
-              }
-            }
-        System.out.println(max);
+      Person person1 = new Person("Adam", "Jones");
+      Person person2 = new Person("John", "Smith");
+      
+      person1.meet(person2);
+      
+      System.out.println(person1.getMeetings());
+      System.out.println(person2.getMeetings());
+      
+      
+      
+      person2.meet(person1);
+      
+      System.out.println(person1.getMeetings());
+      System.out.println(person2.getMeetings());
+      
+      
+      
+      Person person3 = new Person("Amy", "Jordan");
+      person3.meet(person2);
+      
+      System.out.println(person1.getMeetings());
+      System.out.println(person2.getMeetings());
+      System.out.println(person3.getMeetings());
+         
     }
  }
  
